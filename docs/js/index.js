@@ -15371,6 +15371,15 @@ var converter =  new showdown.Converter({
   extensions: ['prettify', 'tasklist', 'footnote'],
   tables: true
 });
+
+function showSnackbar() {
+  var $snackbar = $('#snackbar');
+  $snackbar.addClass('show');
+  setTimeout(() => {
+    $snackbar.removeClass('show');
+  }, 3000);
+}
+
 /**
  * [OnlineMarkdown description]
  * @type {Object}
@@ -15428,7 +15437,31 @@ var OnlineMarkdown = {
     });
     if (params.preview) {
       $convert.trigger('click');
-    }
+		}
+		
+		    // 监听元素滚动
+				var hasInputScroll = false;
+				var hasOutputScroll = false;
+				$('#input').on('scroll', event => {
+					if (hasInputScroll) {
+						hasInputScroll = false;
+					} else {
+						var $output = $('#outputCtt');
+						var outputScrollHeight = (event.currentTarget.scrollTop / event.currentTarget.scrollHeight) * $output.prop("scrollHeight");
+						hasOutputScroll = true;
+						$output.scrollTop(outputScrollHeight);
+					}
+				});
+				$('#outputCtt').on('scroll', event => {
+					if (hasOutputScroll) {
+						hasOutputScroll = false;
+					} else {
+						var $input = $('#input');
+						var inputScrollHeight = (event.currentTarget.scrollTop / event.currentTarget.scrollHeight) * $input.prop("scrollHeight");
+						hasInputScroll = true;
+						$input.scrollTop(inputScrollHeight);
+					}
+				});
   },
 
   updateOutput: function () {
