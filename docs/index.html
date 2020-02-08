@@ -40,40 +40,30 @@
             position: inherit;
         }
 
-        .google-adv {
-            height: 100px;
-            width: 50%;
-            position: absolute;
-            top: 0px;
-            right: 200px;
-            text-align: center;
-        }
-
     </style>
 </head>
 <body>
 
 <div class="topheader">
-    <a href="http://blog.didispace.com"><h1>程序猿DD - 在线工具 </h1></a>
-    <span>Markdown转换工具（微信公众号编辑利器）</span>
-    <!--Google adv-->
-    <div class="google-adv">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8254913025324557"
-             data-ad-slot="8885020021"
-             data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
+    <a ><h1>Markdown2Wechat </h1></a>
     <ul>
+      <li>
+          <div class="theme-wrapper">
+            <label>页面主题选择：</label><select class="page-theme"></select>
+          </div>
+        </li>
+        <li>
+          <div class="theme-wrapper">
+            <label>代码主题选择：</label><select class="code-theme"></select>
+          </div>
+        </li>
+        <li>
+            <button class="btn copy-button" data-clipboard-action="cut" data-clipboard-target="#outputCtt">复制</button>
+        </li>
         <li>
             <iframe allowtransparency="true" frameborder="0" scrolling="0" width="90px" height="20px"
                     class="github-star"
-                    src="http://ghbtns.com/github-btn.html?user=dyc87112&amp;repo=online-markdown&amp;type=watch&amp;count=true&amp;size=middle"></iframe>
+                    src=""></iframe> <!--TODO-->
         </li>
     </ul>
 </div>
@@ -82,34 +72,9 @@
 <textarea id="input" spellcheck="false"></textarea>
 
 <!--预览-->
-    <div id="output" class="themes-config">
-        <div class="theme-wrapper">
-            <label>页面主题选择：</label><select class="page-theme"></select><br><br>
-            <label>代码主题选择：</label><select class="code-theme"></select>
-        </div>
-        <div class="theme-wrapper">
-            <button class="btn copy-button" data-clipboard-action="cut" data-clipboard-target="#outputCtt">复制</button>
-        </div>
-        <div class="wrapper" id="outputCtt"></div>
-    </div>
+<div id="output">
+    <div class="wrapper" id="outputCtt"></div>
+</div>
 
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?3e1cdb5d0a9e409358566f06f89e048d";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>
