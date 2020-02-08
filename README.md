@@ -11,6 +11,10 @@
 ## 使用方法
 直接将仓库clone到本地后，打开index.html文件即可使用
 
+## TODO
+- [ ] 优化title样式为自己公众号的风格 
+- [ ] 优化`index.js`文件下css代码的导入方式
+
 ## LICENSE
 
 MIT. Thanks for @Phodal. @barretlee
